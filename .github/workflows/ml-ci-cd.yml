@@ -30,5 +30,7 @@ jobs:
       - name: train model
         run: python model/train.py
 
+      - name: docker build
+        run: docker build -t ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{github.sha}} .
 
 
